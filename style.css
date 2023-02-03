@@ -58,23 +58,32 @@ body{
     text-indent: 8px;
     padding: 4px;
 }
-#btn{
+
+#addBtn, #deleteBtn{
     width: 25px;
     height: 25px;
-    background-color: rgb(105, 105, 105);
     border-radius: 50%;
     border: none;
-    cursor: pointer;
-    color: white;
     font-size: 1.2rem;
     transition: .5s;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-#btn:hover{
-    color: rgb(47,150,163);
+#addBtn{
+    color: rgb(14, 203, 14);
+    background-color: white;
+}
+
+#deleteBtn{
+    color: red;
+    background-color: white;
+}
+
+#addBtn:hover, #deleteBtn:hover{
+    color: black;
 }
 
 .user-location-info, .city-container{

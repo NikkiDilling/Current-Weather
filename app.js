@@ -4,7 +4,8 @@ const myKey = config.apiKey;
 const userInformationBtn = document.querySelector('.user-information');
 const userLocationInfo = document.querySelector('.user-location-info');
 const otherLocationContainer = document.querySelector('.other-location-container');
-const addBtn = document.getElementById('btn');
+const addBtn = document.getElementById('addBtn');
+const deleteBtn = document.getElementById('deleteBtn');
 
 //function that creates an element of city-container.
 function addCity(){
@@ -25,7 +26,7 @@ function addCity(){
 
     const button = document.createElement('button');
     cityContainer.append(button);
-    button.setAttribute('id','btn');
+    button.setAttribute('id','deleteBtn');
     const icon = document.createElement('i');
     button.append(icon);
     console.log(icon);
@@ -51,6 +52,7 @@ function addCity(){
 }
 
 addBtn.addEventListener('click',addCity);
+
 
 userInformationBtn.addEventListener('click',()=> {
     let longitude;
