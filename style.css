@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh; /*full screen*/
+    background: linear-gradient(rgb(47,150,163),rgb(48,62,143));
+    color: white;
+}
+
+.user-location-container{
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;   
+}
+
+.user-location-container h1{
+    margin-right: 2rem;
+}
+
+.main-container{
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-location-container{
+    width: 60%;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.search-container{
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border: 2px solid white;
+}
+
+.search-bar{
+    margin-left: 10px;
+    border-radius: 20px;
+    width: 70%;
+    background: rgba(250,250,250,0.5);
+    text-indent: 8px;
+    padding: 4px;
+}
+#btn{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(105, 105, 105);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn:hover{
+    color: rgb(47,150,163);
+}
+
+.user-location-info, .city-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid white;
+    border-radius: 18px;
+}
+
+.user-location-info{
+    width: 60%;
+    padding: 10px 80px;
+}
+
+.city-container{
+    padding: 10px;
+    margin-bottom: 1.2rem;
+}
+
+/*hiding user dispay information*/
+.user-location{
+    display: none;
+}
+.user-location-degrees{
+    display: none;
+}
+
+.active{
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
