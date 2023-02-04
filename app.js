@@ -5,7 +5,8 @@ const userInformationBtn = document.querySelector('.user-information');
 const userLocationInfo = document.querySelector('.user-location-info');
 const otherLocationContainer = document.querySelector('.other-location-container');
 const addBtn = document.getElementById('addBtn');
-const deleteBtn = document.getElementById('deleteBtn');
+
+console.log(addBtn);
 
 //function that creates an element of city-container.
 function addCity(){
@@ -25,12 +26,13 @@ function addCity(){
     cityContainer.append(degrees);
 
     const button = document.createElement('button');
-    cityContainer.append(button);
     button.setAttribute('id','deleteBtn');
+    cityContainer.append(button);
+    
     const icon = document.createElement('i');
-    button.append(icon);
-    console.log(icon);
+    button.appendChild(icon);
     icon.classList.add('fa-sharp', 'fa-solid', 'fa-minus');
+    
 
 
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue.value}&appid=${myKey}&units=metric`;
@@ -38,7 +40,7 @@ function addCity(){
         .then(response => {return response.json();
         })
             .then(data =>{
-                console.log(data);
+                //console.log(data);
                 const {name} = data;
                 const {temp, feels_like} = data.main;
 
@@ -49,6 +51,19 @@ function addCity(){
 
 
     inputValue.value = ""; //resetting value
+
+    //Adding Event Listener to the NEW delete button
+    button.addEventListener('click', (e)=>{
+        
+        if(e.target.tagName.toLowerCase() === 'button'){
+            e.target.parentElement.remove();
+            console.log('removed');
+        }else{
+            e.target.parentElement.parentElement.remove();
+            console.log('grandparent removed');
+        }
+    
+    })
 }
 
 addBtn.addEventListener('click',addCity);
