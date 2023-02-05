@@ -20,7 +20,10 @@ body{
 }
 
 .user-location-container h1{
-    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.9rem;
+    margin-right: 1rem;
 }
 
 .main-container{
@@ -43,11 +46,11 @@ body{
     width: 60%;
     margin: auto;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 26px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 3rem;
-    border: 2px solid white;
+    border: 3px solid white;
 }
 
 .search-bar{
@@ -60,16 +63,17 @@ body{
 }
 
 #addBtn, #deleteBtn{
+    cursor: pointer;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     border: none;
     font-size: 1.2rem;
     transition: .5s;
+    /*centering icon inside the button*/
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
 #addBtn{
@@ -78,20 +82,24 @@ body{
 }
 
 #deleteBtn{
-    color: red;
+    color: rgb(232, 58, 58);
     background-color: white;
 }
 
-#addBtn:hover, #deleteBtn:hover{
-    color: black;
+#addBtn:hover{
+    color: white;
+    background: rgb(14, 203, 14);
 }
-
+#deleteBtn:hover{
+    color: white;
+    background: rgb(232, 58, 58);
+}
 .user-location-info, .city-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid white;
-    border-radius: 18px;
+    border-radius: 20px;
 }
 
 .user-location-info{
@@ -104,7 +112,11 @@ body{
     margin-bottom: 1.2rem;
 }
 
-/*hiding user dispay information*/
+.city-location{
+    width: 20%;
+    max-width: 100px;
+}
+/*hiding user dispay information until API fetched data*/
 .user-location{
     display: none;
 }
@@ -116,4 +128,26 @@ body{
     justify-content: center;
     text-align: center;
     cursor: pointer;
+}
+
+/*small screens*/
+@media (max-width:700px){
+    .search-container, .other-location-container, .user-location-info{
+        width: 80%;
+    }
+
+    .user-location-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-location-info{
+        padding: 10px;
+    }
+
+    .user-location-container h1{
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+        margin-right: 0;
+    }
 }
